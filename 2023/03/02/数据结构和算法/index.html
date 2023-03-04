@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://typora-iamge.oss-cn-beijing.aliyuncs.com/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-04%20161107.png">
 <meta property="og:image" content="https://typora-iamge.oss-cn-beijing.aliyuncs.com/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-02%20164421.png">
 <meta property="article:published_time" content="2023-03-02T09:31:08.000Z">
-<meta property="article:modified_time" content="2023-03-04T09:22:07.966Z">
+<meta property="article:modified_time" content="2023-03-04T14:22:26.390Z">
 <meta property="article:author" content="zhangyiln">
 <meta property="article:tag" content="-知识总结">
 <meta name="twitter:card" content="summary_large_image">
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.2k 字
+          6.2k 字
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          44 分钟
+          52 分钟
         
       </span>
     
@@ -477,7 +477,7 @@
 <li><p>代码实现：</p>
 </li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c">Status <span class="hljs-title function_">ListInsert</span><span class="hljs-params">(LinkList *L,<span class="hljs-type">int</span> i,EleType e)</span>&#123;<br>    <span class="hljs-type">int</span> j;<br>    LinkList p,s;<br>    p = *L;<br>    j = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(p &amp;&amp; j &lt; i)&#123;<br>        p = p.next;<br>        ++j;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(!p || j&gt;<span class="hljs-number">1</span>)&#123;<br>        <span class="hljs-keyword">return</span> ERROR:<br>    &#125;<br>    s = (LinkList)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Node));<br>    s.data = e;<br>    s.next = p.next;<br>    p.next = s;<br>    <span class="hljs-keyword">return</span> OK;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c">Status <span class="hljs-title function_">ListInsert</span><span class="hljs-params">(LinkList *L,<span class="hljs-type">int</span> i,EleType e)</span>&#123;<br>    <span class="hljs-type">int</span> j;<br>    LinkList p,s;<br>    p = *L;<br>    j = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(p &amp;&amp; j &lt; i)&#123; <span class="hljs-comment">// 寻找第i个结点</span><br>        p = p.next;<br>        ++j;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(!p || j&gt;<span class="hljs-number">1</span>)&#123; <span class="hljs-comment">// 第i个元素不存在</span><br>        <span class="hljs-keyword">return</span> ERROR:<br>    &#125;<br>    s = (LinkList)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Node));  <span class="hljs-comment">// 生成新结点</span><br>    s.data = e;<br>    s.next = p.next; <span class="hljs-comment">// 将p的后继结点赋值给s的后继结点</span><br>    p.next = s;  <span class="hljs-comment">// 将s赋值给p的后继</span><br>    <span class="hljs-keyword">return</span> OK;<br>&#125;<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>单链表的删除</p>
 <ul>
@@ -495,9 +495,43 @@
 </li>
 <li>代码实现：</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c">Status <span class="hljs-title function_">ListDelete</span> <span class="hljs-params">(LinkList *L,<span class="hljs-type">int</span> i, EleType *e)</span>&#123;<br>    <span class="hljs-type">int</span> i;<br>    p = *L;<br>    j = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(p.next &amp;&amp; j &lt; i)&#123;<br>        p = p.next;<br>        ++j;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(!(p.next) || j &gt;i)&#123;<br>        <span class="hljs-keyword">return</span> ERROR:<br>    &#125;<br>    q = p.next;<br>    p.next = q.next;<br>    *e = q.data;<br>    <span class="hljs-built_in">free</span>(q);<br>    <span class="hljs-keyword">return</span> OK;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c">Status <span class="hljs-title function_">ListDelete</span> <span class="hljs-params">(LinkList *L,<span class="hljs-type">int</span> i, EleType *e)</span>&#123;<br>    <span class="hljs-type">int</span> i;<br>    p = *L;<br>    j = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(p.next &amp;&amp; j &lt; i)&#123;<br>        p = p.next;<br>        ++j;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(!(p.next) || j &gt;i)&#123;<br>        <span class="hljs-keyword">return</span> ERROR;    <span class="hljs-comment">//第i个元素不存在</span><br>    &#125;<br>    q = p.next;     <br>    p.next = q.next;  <span class="hljs-comment">// q的后继赋值给p的后继</span><br>    *e = q.data;  <span class="hljs-comment">// 将q结点中的数据给e*</span><br>    <span class="hljs-built_in">free</span>(q);    <span class="hljs-comment">// 系统回收结点，释放内存</span><br>    <span class="hljs-keyword">return</span> OK;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>若不知道第i个元素的指针位置，单链表数据结构在插入和删除操作上，与线性表的顺序存储结构没有太大优势。但知道位置后，对于插入或删除数据越频繁的操作，单链表的效率优势越明显。</li>
+</ul>
 </li>
-<li></li>
+<li><p>单链表的整表创建</p>
+<ul>
+<li><p>顺序存储结构的创建，其实就是一个数组的初始化，单链表就不一样，它没这么集中，它可以很散，是一种动态结构。</p>
+</li>
+<li><p>算法思路：</p>
+<ul>
+<li><p>声明结点p和计数器变量i</p>
+</li>
+<li><p>初始化一空链表L</p>
+</li>
+<li><p>让L的头结点的指针指向NULL，即建立一个带头结点的单列表</p>
+</li>
+<li><p>循环：</p>
+<ul>
+<li><p>生成一新节点赋值给p</p>
+</li>
+<li><p>随机生成一数字赋值给p的数据域<code>p.data</code></p>
+</li>
+<li><p>将p插入到头结点与前一新节点之间</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>代码实现</p>
+</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">// 随机产生n个元素的值，建立带头结点的单链表L(头插法)</span><br><span class="hljs-type">void</span> <span class="hljs-title function_">CreateListHead</span><span class="hljs-params">(LinkList * L, <span class="hljs-type">int</span> n)</span>&#123;<br>    LinkList p;<br>    <span class="hljs-type">int</span> i;<br>    srand(time(<span class="hljs-number">0</span>));<br>    *L = (LinkList)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Node));<br>    (*L).next = <span class="hljs-literal">NULL</span>;<br>    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">0</span>;i&lt;n;i++)&#123;<br>        p = (LinkList)<span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(Node)); <span class="hljs-comment">//生成新节点</span><br>        p.data =rand()%<span class="hljs-number">100</span>+<span class="hljs-number">1</span>;<br>        p.next = (*L).next;<br>        (*L).next = p;  <span class="hljs-comment">// 插到表头</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>&#96;&#96;&#96;c<br>&#x2F;&#x2F; 尾插法<br>void CreateListHead(LinkList * L, int n){<br>    LinkList p,r;<br>    int i;<br>    srand(time(0));<br>    *L &#x3D; (LinkList)malloc(sizeof(Node));<br>    r &#x3D; *L;		&#x2F;&#x2F;r为指向尾部的结点<br>    for(i&#x3D;0;i&lt;n;i++){<br>        p &#x3D; (LinkList)malloc(sizeof(Node)); &#x2F;&#x2F;生成新节点<br>        p.data &#x3D;rand()%100+1;<br>        r.next &#x3D; p;  &#x2F;&#x2F; 将表尾终端的结点指向新节点<br>        r &#x3D; p;  &#x2F;&#x2F; 将当前的新节点定义为表尾终端结点<br>    }<br>    r.next &#x3D; NULL;  &#x2F;&#x2F; 表示当前链表结束<br>}</p>
+</li>
 </ul>
 </li>
 </ul>
