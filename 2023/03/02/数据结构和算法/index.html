@@ -26,7 +26,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://typora-iamge.oss-cn-beijing.aliyuncs.com/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-02%20164421.png">
 <meta property="article:published_time" content="2023-03-02T09:31:08.000Z">
-<meta property="article:modified_time" content="2023-03-02T09:36:38.087Z">
+<meta property="article:modified_time" content="2023-03-04T03:33:46.355Z">
 <meta property="article:author" content="zhangyiln">
 <meta property="article:tag" content="-知识总结">
 <meta name="twitter:card" content="summary_large_image">
@@ -240,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4k 字
+          4.7k 字
         
       </span>
     
@@ -251,7 +251,7 @@
         
         
         
-          34 分钟
+          40 分钟
         
       </span>
     
@@ -357,7 +357,7 @@
 <li>定义：零个或多个元素的有限序列</li>
 <li>解释：有且只有一个后继和前驱</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//抽象</span><br>ADT 线性表（<span class="hljs-built_in">list</span>）<br>    Data<br>    <span class="hljs-title function_">Operation</span> <span class="hljs-params">()</span> &#123;<br>    InitList(*L) <span class="hljs-comment">//初始化操作，建立一个空的线性表</span><br>    ListEmpty(L) <span class="hljs-comment">//线性表为空返回true，否则返回false</span><br>    ClearList(*L) <span class="hljs-comment">//清空线性表</span><br>    GetEle(L,i,*e) <span class="hljs-comment">//将线性表L中的第i个元素返回给e</span><br>    LoaclEle(L,e) <span class="hljs-comment">//在线性表中查找与给定值e相同的元素，如果查找成功，返回元素在  表中序号，否则返回0</span><br>    ListInsert(*L,i,e) <span class="hljs-comment">//在线性表L中的第i个位置插入元素e</span><br>    ListDelete(*L,i,e) <span class="hljs-comment">//删除线性表L中的第i个元素，返回e代表其值</span><br>    ListLength(L) <span class="hljs-comment">//返回线性表L中元素的个数    </span><br>&#125;<br>endADT<br><span class="hljs-comment">// 对于不同的应用，线性表的基本操作是不同的，对实际问题的复杂操作，可以通过基本操作的组合来实现。 </span><br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//抽象</span><br>ADT 线性表（<span class="hljs-built_in">list</span>）<br>    Data<br>    <span class="hljs-comment">// 线性表的数据对象集合为&#123;a1,a2,......,an&#125;,每个元素的类型均为DataType.除第一个元素，每个元素有且只有一个前驱元素，除最后一个元素，每个元素有且只有一个后继元素，元素之间一一对应。</span><br>    Operation  <br>    	<span class="hljs-title function_">InitList</span><span class="hljs-params">(*L)</span> <span class="hljs-comment">//初始化操作，建立一个空的线性表</span><br>    	<span class="hljs-title function_">ListEmpty</span><span class="hljs-params">(L)</span> <span class="hljs-comment">//线性表为空返回true，否则返回false</span><br>    	<span class="hljs-title function_">ClearList</span><span class="hljs-params">(*L)</span> <span class="hljs-comment">//清空线性表</span><br>    	<span class="hljs-title function_">GetEle</span><span class="hljs-params">(L,i,*e)</span> <span class="hljs-comment">//将线性表L中的第i个元素返回给e</span><br>    	<span class="hljs-title function_">LoaclEle</span><span class="hljs-params">(L,e)</span> <span class="hljs-comment">//在线性表中查找与给定值e相同的元素，如果查找成功，返回元素在  表中序号，否则返回0</span><br>    	<span class="hljs-title function_">ListInsert</span><span class="hljs-params">(*L,i,e)</span> <span class="hljs-comment">//在线性表L中的第i个位置插入元素e</span><br>    	<span class="hljs-title function_">ListDelete</span><span class="hljs-params">(*L,i,e)</span> <span class="hljs-comment">//删除线性表L中的第i个元素，返回e代表其值</span><br>    	<span class="hljs-title function_">ListLength</span><span class="hljs-params">(L)</span> <span class="hljs-comment">//返回线性表L中元素的个数    </span><br><br>endADT<br><span class="hljs-comment">// 对于不同的应用，线性表的基本操作是不同的，对实际问题的复杂操作，可以通过基本操作的组合来实现。 </span><br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><p>实现：可用顺序储存结构和链式存储结构来实现</p>
@@ -392,14 +392,14 @@
 <ul>
 <li>获取元素（代码实现）</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">define</span> OK 1</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ERROR 0</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> TRUE 1</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> FALSE 0</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> Status;<br><span class="hljs-comment">// Status是函数的类型</span><br>Status <span class="hljs-title function_">GetEle</span><span class="hljs-params">(SqList L,<span class="hljs-type">int</span> i,EleType *e)</span>&#123;<br>    <span class="hljs-keyword">if</span>(L.length==<span class="hljs-number">0</span> || i&gt;L.length)&#123;<br>        <span class="hljs-keyword">return</span> ERROR:<br>    &#125;<br>    *e=L.data[i<span class="hljs-number">-1</span>];<br>    <span class="hljs-keyword">return</span> OK:<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">define</span> OK 1</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ERROR 0</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> TRUE 1</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> FALSE 0</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">int</span> Status;<br><span class="hljs-comment">// Status是函数的类型,返回值时状态代码，如OK等</span><br><span class="hljs-comment">// 初始条件：顺序线性表L已存在，1&lt;=i&lt;=ListLength(L)</span><br><span class="hljs-comment">// 操作结果：用e返回L中得i个元素的值</span><br>Status <span class="hljs-title function_">GetEle</span><span class="hljs-params">(SqList L,<span class="hljs-type">int</span> i,EleType *e)</span>&#123;<br>    <span class="hljs-keyword">if</span>(L.length==<span class="hljs-number">0</span> || i&gt;L.length)&#123;<br>        <span class="hljs-keyword">return</span> ERROR:<br>    &#125;<br>    *e=L.data[i<span class="hljs-number">-1</span>];<br>    <span class="hljs-keyword">return</span> OK:<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><p>插入</p>
 <ul>
 <li>思路：<ul>
 <li>插入位置不合理，抛出异常</li>
-<li>线性表长度大于等于数组长度，抛出一次或动态增加容量</li>
+<li>若线性表长度大于等于数组长度，抛出异常或动态增加容量</li>
 <li>从最后一个元素开始向前遍历到第i个位置，分别将它们向后移动一个位置</li>
 <li>将要插入元素填入位置i处</li>
 <li>表长加一</li>
@@ -407,7 +407,7 @@
 </li>
 <li>代码实现</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c">Status <span class="hljs-title function_">ListInsert</span><span class="hljs-params">(SqList *L,<span class="hljs-type">int</span> i,EleType e)</span>&#123;<br>    <span class="hljs-type">int</span> k;<br>    <span class="hljs-keyword">if</span>(L.length==MAXSIZE)&#123;		<span class="hljs-comment">//线性表已满</span><br>        <span class="hljs-keyword">return</span> ERROR;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span> || i&gt;L.length+<span class="hljs-number">1</span>)&#123;		<span class="hljs-comment">//i不在范围</span><br>        <span class="hljs-keyword">return</span> ERROR;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(i&lt;=L.length<span class="hljs-number">-1</span>)&#123;		<span class="hljs-comment">//插入位置不在表尾</span><br>        <span class="hljs-keyword">for</span>(k=L.length<span class="hljs-number">-1</span>;k&gt;=i<span class="hljs-number">-1</span>;k--)&#123; <span class="hljs-comment">//位置后移</span><br>            L.data[k+<span class="hljs-number">1</span>]=L.data[k];<br>        &#125;<br>    &#125;<br>    L.data[i<span class="hljs-number">-1</span>]=e; <span class="hljs-comment">//插入新元素</span><br>    L.length++;<br>    <span class="hljs-keyword">return</span> OK;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-comment">//关于第一个参数为什么是指针：C语言中，如果想在函数内部修改函数外部的数据，需要传递该数据的地址作为参数，插入函数改变了数据，因此需要将顺序表的地址作为参数传递，如果不传递指针作为参数，而是直接传递副本，则修改的只是副本，不会影响函数外部的数据</span><br>Status <span class="hljs-title function_">ListInsert</span><span class="hljs-params">(SqList *L,<span class="hljs-type">int</span> i,EleType e)</span>&#123;<br>    <span class="hljs-type">int</span> k;<br>    <span class="hljs-keyword">if</span>(L.length==MAXSIZE)&#123;		<span class="hljs-comment">//线性表已满</span><br>        <span class="hljs-keyword">return</span> ERROR;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span> || i&gt;L.length+<span class="hljs-number">1</span>)&#123;		<span class="hljs-comment">//i不在范围</span><br>        <span class="hljs-keyword">return</span> ERROR;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(i&lt;=L.length<span class="hljs-number">-1</span>)&#123;		<span class="hljs-comment">//插入位置不在表尾</span><br>        <span class="hljs-keyword">for</span>(k=L.length<span class="hljs-number">-1</span>;k&gt;=i<span class="hljs-number">-1</span>;k--)&#123; <span class="hljs-comment">//位置后移</span><br>            L.data[k+<span class="hljs-number">1</span>]=L.data[k];<br>        &#125;<br>    &#125;<br>    L.data[i<span class="hljs-number">-1</span>]=e; <span class="hljs-comment">//插入新元素</span><br>    L.length++;<br>    <span class="hljs-keyword">return</span> OK;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <ul>
 <li><p>删除</p>
@@ -421,7 +421,7 @@
 </li>
 <li>代码实现</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c">Status <span class="hljs-title function_">ListDelete</span><span class="hljs-params">(SqList *l,<span class="hljs-type">int</span> i,ELeType *e)</span>&#123;<br>    <span class="hljs-type">int</span> k;<br>    <span class="hljs-keyword">if</span>(L.length==<span class="hljs-number">0</span>)&#123;		<span class="hljs-comment">//线性表为空</span><br>        <span class="hljs-keyword">return</span> ERROR;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span> || i&gt;L.length)&#123;		<span class="hljs-comment">//i不在范围</span><br>        <span class="hljs-keyword">return</span> ERROR;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(i&lt;=L.length)&#123;		<span class="hljs-comment">//删除位置不在表尾</span><br>        <span class="hljs-keyword">for</span>(k=i;k&lt;L.length;k++)&#123; <span class="hljs-comment">//位置前移</span><br>            L.data[k<span class="hljs-number">-1</span>]=L.data[k];<br>        &#125;<br>    &#125;<br>    L.length--;<br>    <span class="hljs-keyword">return</span> OK；<br>&#125;<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c">Status <span class="hljs-title function_">ListDelete</span><span class="hljs-params">(SqList *L,<span class="hljs-type">int</span> i,ELeType *e)</span>&#123;<br>    <span class="hljs-type">int</span> k;<br>    <span class="hljs-keyword">if</span>(L.length==<span class="hljs-number">0</span>)&#123;		<span class="hljs-comment">//线性表为空</span><br>        <span class="hljs-keyword">return</span> ERROR;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(i&lt;<span class="hljs-number">1</span> || i&gt;L.length)&#123;		<span class="hljs-comment">//i不在范围</span><br>        <span class="hljs-keyword">return</span> ERROR;<br>    &#125;<br>    <span class="hljs-keyword">if</span>(i&lt;=L.length)&#123;		<span class="hljs-comment">//删除位置不在表尾</span><br>        <span class="hljs-keyword">for</span>(k=i;k&lt;L.length;k++)&#123; <span class="hljs-comment">//位置前移</span><br>            L.data[k<span class="hljs-number">-1</span>]=L.data[k];<br>        &#125;<br>    &#125;<br>    L.length--;<br>    <span class="hljs-keyword">return</span> OK；<br>&#125;<br></code></pre></td></tr></table></figure></li>
 </ul>
 </li>
 </ul>
@@ -445,7 +445,7 @@
 <li><p>若线性表为空，则头结点的指针域为空。</p>
 </li>
 <li><p>代码实现</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>&#123;</span> <br>  EleType data;<br>  <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">next</span>;</span><br>&#125; Node;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">LinkList</span>;</span> <br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>&#123;</span> <br>  EleType data;<br>  <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">next</span>;</span><br>&#125; Node;<br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span> *<span class="hljs-title">LinkList</span>;</span>  <span class="hljs-comment">// 定义LinkList</span><br></code></pre></td></tr></table></figure>
 </li>
 <li><p>单链表读取</p>
 <ul>
@@ -477,8 +477,21 @@
 </li>
 <li><p>单链表的删除</p>
 <ul>
-<li>有三个结点。结点p,结点q或p.next,结点q.next或p.next.next,我们要做的就是&#96;q&#x3D;p.next; p.next&#x3D;q.next;</li>
+<li>有三个结点。结点p,结点q或<code>p.next</code>,结点<code>q.next</code>或<code>p.next.next</code>,我们要做的就是<code>q=p.next; p.next=q.next;</code></li>
+<li>代码思路：<ul>
+<li>声明一节点p指向链表第一个结点，初始化j从1开始</li>
+<li>当j&lt;1时，就遍历链表，让p的指针向后移动，不断指向下一结点，j累加1</li>
+<li>若到链表末尾p为空，则说明第i个元素不存在</li>
+<li>否则查找成功，将与删除的结点<code>p.next</code>赋值给q</li>
+<li>单链表的删除标准语句<code>p.next = q.next</code></li>
+<li>将q结点中的数据赋值给e,作为返回值</li>
+<li>释放q结点</li>
+<li>返回成功</li>
 </ul>
+</li>
+<li>代码实现：</li>
+</ul>
+<p>&#96;&#96;&#96;c<br>Status ListDelete (LinkList *L,int i, EleType *e){<br>    int i;<br>    p &#x3D; *L;<br>    j &#x3D; 1;<br>    while(p.next &amp;&amp; j &lt; i){<br>        p &#x3D; p.next;<br>        ++j;<br>    }<br>    if(!(p.next) || j &gt;i){<br>        return ERROR:<br>    }<br>    q &#x3D; p.next;<br>    p.next &#x3D; q.next;<br>    *e &#x3D; q.data;<br>    free(q);<br>    return OK;<br>}</p>
 </li>
 </ul>
 </li>
