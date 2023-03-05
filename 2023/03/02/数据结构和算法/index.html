@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://typora-iamge.oss-cn-beijing.aliyuncs.com/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-04%20161107.png">
 <meta property="og:image" content="https://typora-iamge.oss-cn-beijing.aliyuncs.com/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202023-03-02%20164421.png">
 <meta property="article:published_time" content="2023-03-02T09:31:08.000Z">
-<meta property="article:modified_time" content="2023-03-05T03:11:53.439Z">
+<meta property="article:modified_time" content="2023-03-05T08:25:48.792Z">
 <meta property="article:author" content="zhangyiln">
 <meta property="article:tag" content="-知识总结">
 <meta name="twitter:card" content="summary_large_image">
@@ -242,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.4k 字
+          6.5k 字
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
         
-          54 分钟
+          55 分钟
         
       </span>
     
@@ -547,8 +547,16 @@
 </li>
 <li>代码实现</li>
 </ul>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c">Status <span class="hljs-title function_">ClearList</span><span class="hljs-params">(LinkList *L)</span>&#123;<br>    LinkList p,q;<br>    p = (*L).next;<br>    <span class="hljs-keyword">while</span>(p)&#123;	<span class="hljs-comment">// 没到表尾</span><br>        q = p.next;<br>        <span class="hljs-built_in">free</span>(p);<br>        p = q;<br>    &#125;<br>    (*L).next = <span class="hljs-literal">NULL</span>; <span class="hljs-comment">// 头结点指针域为空</span><br>    <span class="hljs-keyword">return</span> OK;<br>&#125;    <br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs c">Status <span class="hljs-title function_">ClearList</span><span class="hljs-params">(LinkList *L)</span>&#123;<br>    LinkList p,q;<br>    p = (*L).next;<br>    <span class="hljs-keyword">while</span>(p)&#123;	<span class="hljs-comment">// 没到表尾</span><br>        q = p.next;<br>        <span class="hljs-built_in">free</span>(p);<br>        p = q;<br>    &#125;<br>    (*L).next = <span class="hljs-literal">NULL</span>; <span class="hljs-comment">// 头结点指针域为空</span><br>    <span class="hljs-keyword">return</span> OK;<br>&#125;    <br></code></pre></td></tr></table></figure></li>
+</ul>
 </li>
+<li><p>静态链表（用数组描述的链表）</p>
+<ul>
+<li>代码实现：</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-meta">#<span class="hljs-keyword">define</span> MAXSIZE 1000</span><br><span class="hljs-keyword">typedef</span> <span class="hljs-class"><span class="hljs-keyword">struct</span>&#123;</span><br>    EleType data;<br>    <span class="hljs-type">int</span> cur <span class="hljs-comment">// 游标（cursor），为0时表示无指向</span><br>&#125; Component,StaticLinkList[MAXSIZE];<br></code></pre></td></tr></table></figure>
+
+<ul>
 <li></li>
 </ul>
 </li>
